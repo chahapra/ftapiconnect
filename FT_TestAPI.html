@@ -35,7 +35,15 @@
     var url = "https://campaign-manager-api.flashtalking.net/v1/campaigns/";
     var data = create_campaign;
     xmlhttp = new XMLHttpRequest();
-
+    xmlhttp.open("POST", url, true);
+    xmlhttp.setRequestHeader("authorization", "Basic cHJhdmluX2NoYWhhbmRlQHN0YXJzZ3JvdXAuY29tOk5ld3RzY2FtYW5kZXIwOTExKg==");
+    xmlhttp.setRequestHeader("Access-Control-Allow-Credentials",true);
+    xmlhttp.setRequestHeader("Access-Control-Allow-Origin","https://chahapra.github.io/ftapiconnect");
+    xmlhttp.setRequestHeader("Access-Control-Expose-Headers","X-Csrf-Token");
+    xmlhttp.setRequestHeader("cache-control", "no-cache");
+    xmlhttp.setRequestHeader ("Access-Control-Allow-Origin","*");
+    xmlhttp.setRequestHeader ("Access-Control-Expose-Headers","Content-Length, X-JSON");
+    xmlhttp.setRequestHeader ("Access-Control-Allow-Methods","GET, POST, PATCH, PUT, DELETE, OPTIONS");
 
 
     xmlhttp.onreadystatechange = function() {
@@ -46,15 +54,7 @@
       }
 
     };
-    xmlhttp.open("POST", url, true);
-    xmlhttp.setRequestHeader("authorization", "Basic cHJhdmluX2NoYWhhbmRlQHN0YXJzZ3JvdXAuY29tOk5ld3RzY2FtYW5kZXIwOTExKg==");
-    xmlhttp.setRequestHeader("Access-Control-Allow-Credentials",true);
-    xmlhttp.setRequestHeader("Access-Control-Allow-Origin","https://chahapra.github.io/ftapiconnect");
-    xmlhttp.setRequestHeader("Access-Control-Expose-Headers","X-Csrf-Token");
-    xmlhttp.setRequestHeader("cache-control", "no-cache");
-    xmlhttp.setRequestHeader ("Access-Control-Allow-Origin","*");
-    xmlhttp.setRequestHeader ("Access-Control-Expose-Headers","Content-Length, X-JSON");
-    xmlhttp.setRequestHeader ("Access-Control-Allow-Methods","GET, POST, PATCH, PUT, DELETE, OPTIONS");
+
 
     xmlhttp.send(data);
   </script>
